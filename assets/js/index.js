@@ -124,10 +124,13 @@ window.addEventListener('load', async () => {
 
   hackLength = await callStatic('getHackLength', []); 
 
-  for(let i = 1; i< hackLength + 1; i++ ){
+  for(let i = 1; i<= hackLength ; i++ ){
     const Hacks =  await callStatic('getHack', [i]);
     
-    console.log("for loop reached")
+    console.log("for loop reached", "pushing to array")
+    console.log(imageUrl)
+    console.log(name)
+    console.log(tutorial)
     
 
     HackArray.push({
@@ -154,7 +157,10 @@ $('#regButton').click(async function(){
    
     tutorial = ($('#lifeHack').val());
     await contractCall('writeHack', [url,name,tutorial], 0)
-    console.log(name),
+   
+    console.log(imageUrl)
+    console.log(name)
+    console.log(tutorial)
 
    
 
