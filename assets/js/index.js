@@ -92,7 +92,7 @@ function renderProduct()
     
   
 
-    $('#productBody').html(rendered);
+    $('#body').html(rendered);
     console.log("for loop reached")
 }
 //Create a asynchronous read call for our smart contract
