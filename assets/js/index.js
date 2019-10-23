@@ -153,7 +153,7 @@ $('#regButton').click(async function(){
     url = ($('#imageUrl').val()),
    
     tutorial = ($('#lifeHack').val());
-    await contractCall('writeHack', [url,name,tutorial])
+    await contractCall('writeHack', [url,name,tutorial], 0)
     console.log(name),
 
    
@@ -161,7 +161,7 @@ $('#regButton').click(async function(){
     
     HackArray.push({
         name : name,
-        url : url,
+        url : imageUrl,
         tutorial : tutorial,
 
         
