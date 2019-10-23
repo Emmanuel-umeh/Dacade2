@@ -128,9 +128,9 @@ window.addEventListener('load', async () => {
     const Hacks =  await callStatic('getHack', [i]);
     
     console.log("for loop reached", "pushing to array")
-    console.log(imageUrl)
-    console.log(name)
-    console.log(tutorial)
+    console.log(Hacks.imageUrl)
+    console.log(Hacks.name)
+    console.log(Hacks.tutorial)
     
 
     HackArray.push({
