@@ -143,48 +143,7 @@ window.addEventListener('load', async () => {
   $("#loadings").hide();
 });
 
-// document.getElementById("bidButton").addEventListener('click', function(event){
-//     console.log(document.getElementById("input").value)
-// });
 
-// $("#productBody").on("click", ".bidButton", async function(event){
-//   $("#loadings").show();
-//     // var review = 0;
-//     const dataIndex = event.target.id;
-//     const foundIndex = ProductArray.findIndex(product => product.index == dataIndex);
-//     const value = $(".bid")[foundIndex].value ;
-
-
-    
-//     await contractCall('bid', [dataIndex], Math.abs(value));
-    
-    
-//     console.log("the value",value);
-//     console.log(typeof value);
-
-//     ProductArray[foundIndex].Price += parseInt(Math.abs(value),10);
-//     ProductArray[foundIndex].review += 1 ;
-    
-    
-//     // product.review += 1;
-//     renderProduct();
-
-//   //   ProductArray.push({
-//   //     review : review
-//   // })
-
-//     $("#loadings").hide();
-// });
-
-// $(document).ready(function(){
-//     $("#productBody").on("click", ".bidButton", async function(event){
-//         const value = parseInt($(".bid").val()) ;
-//         console.log(value)
-//         console.log(typeof value)
-//         // event.preventDefault();
-
-//     })
-//   });
 
 $('#regButton').click(async function(){
   $("#loadings").show();
@@ -200,7 +159,7 @@ $('#regButton').click(async function(){
    
 
     
-    ProductArray.push({
+    HackArray.push({
         name : name,
         url : url,
         tutorial : tutorial,
