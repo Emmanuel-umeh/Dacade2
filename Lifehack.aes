@@ -1,0 +1,69 @@
+contract LifeHack =
+  
+    
+  record hackUser = 
+    {
+    creatorAddress : address,
+    imageUrl : string,
+    name : string,
+    tutorial : string,
+    like : bool,
+    likeCount : int
+    }
+    
+  record state = {
+    hack : map(int, hackUser),
+    hackLength : int,
+    likeCount : int}
+    
+  entrypoint init() = { 
+    hack = {},
+    hackLength = 0,
+    likeCount = 0}
+
+  
+  entrypoint getHack(index : int) = 
+    state.hack[index]
+    
+    //create a life hack
+    
+  stateful entrypoint writeHack( imageUrl' : string, name' : string, tutorial' : string) = 
+    let hackUser = {
+      creatorAddress  = Call.caller,
+      imageUrl = imageUrl',
+      name = name', 
+      tutorial = tutorial',
+      like = false,
+      likeCount = 0
+      
+      }
+    let index = getHackLength() + 1
+    put(state{hack[index] = hackUser, hackLength = index})
+    
+    
+    //returns lenght of life hacks registered
+  entrypoint getHackLength() : int = 
+    state.hackLength
+    
+  //returns number of likes
+    
+  entrypoint likeCounts(index : int) = 
+    state.likeCount
+    
+    //like a lifehack
+    
+  stateful entrypoint likeLifeHack(index : int) = 
+    let product = getHack(index)
+    let hackUser = {
+      creatorAddress  = product.creatorAddress,
+      imageUrl = product.imageUrl,
+      name = product.name, 
+      tutorial = product.tutorial,
+      like = product.like,
+      likeCount = product.likeCount+1}
+    put(state{hack[index] = hackUser})  
+    "LIfe Hack has BEEN LIKED SUCCESSFULLY"
+  
+    
+  
+    
