@@ -194,11 +194,7 @@ $(function(){
     HackArray.push({
      
         numberOfLikes : update
-    })
-     
-    
-    location.reload()
-    
+    }) 
     
 	});
 });
