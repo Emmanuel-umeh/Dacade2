@@ -189,9 +189,13 @@ $(function(){
 		$(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
     $(this).children('.fa-heart').addClass('animate-like');
     
+    HackArray.push({
      
-    HackArray.numberOfLikes =+ 1;
-    location.reload(true)
+        numberOfLikes : numberOfLikes + 1
+    })
+     
+    
+    location.reload()
     
     
 	});
