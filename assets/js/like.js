@@ -4,7 +4,7 @@ var like_cnt = $("#like-cnt");
 var like_parent = $(".like-container");
 
 var burst = new mojs.Burst({
-  parent: like_parent,
+  // parent: like_parent,
   radius:   { 20: 60 },
   count: 15,
   angle:{0:30},
