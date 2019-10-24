@@ -175,4 +175,7 @@ $('#regButton').click(async function(){
     })
     renderProduct();
     $("#loadings").hide();
+    name.value =""
+    url.value =  ""
+    tutorial.value = ""
 });
