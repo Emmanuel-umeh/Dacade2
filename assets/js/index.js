@@ -143,6 +143,22 @@ window.addEventListener('load', async () => {
 
      
   })
+
+  // Like a post
+  $(function(){
+    $(document).on('click', '.like-review', function(e) {
+      $(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
+      $(this).children('.fa-heart').addClass('animate-like');
+
+      update = HackArray.numberOfLikes + 1
+
+      HackArray.push({
+      
+          numberOfLikes : update
+      }) 
+      
+    });
+});
 }
   renderProduct();
   $("#loadings").hide();
@@ -184,17 +200,4 @@ $('#regButton').click(async function(){
     tutorial.value = ""
 });
 
-$(function(){
-	$(document).on('click', '.like-review', function(e) {
-		$(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
-    $(this).children('.fa-heart').addClass('animate-like');
 
-    update = HackArray.numberOfLikes + 1
-
-    HackArray.push({
-     
-        numberOfLikes : update
-    }) 
-    
-	});
-});
