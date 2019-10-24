@@ -123,6 +123,7 @@ window.addEventListener('load', async () => {
   client = await Ae.Aepp()
 
   hackLength = await callStatic('getHackLength', []); 
+  
 
   for(let i = 1; i<= hackLength ; i++ ){
     const Hacks =  await callStatic('getHack', [i]);
