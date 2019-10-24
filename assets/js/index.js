@@ -137,7 +137,8 @@ window.addEventListener('load', async () => {
     HackArray.push({
         imageUrl : Hacks.imageUrl,
         name : Hacks.name, 
-        tutorial : Hacks.tutorial
+        tutorial : Hacks.tutorial,
+        numberOfLikes : 0,
         
 
      
@@ -170,6 +171,7 @@ $('#regButton').click(async function(){
         name : name,
         url : url,
         tutorial : tutorial,
+        numberOfLikes : 0
 
         
         
@@ -180,4 +182,16 @@ $('#regButton').click(async function(){
     name.value =""
     url.value =  ""
     tutorial.value = ""
+});
+
+$(function(){
+	$(document).on('click', '.like-review', function(e) {
+		$(this).html('<i class="fa fa-heart" aria-hidden="true"></i> You liked this');
+    $(this).children('.fa-heart').addClass('animate-like');
+    
+     
+    HackArray.numberOfLikes =+ 1;
+    
+    
+	});
 });
