@@ -191,6 +191,7 @@ $(function(){
     
      
     HackArray.numberOfLikes =+ 1;
+    location.reload(true)
     
     
 	});
