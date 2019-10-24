@@ -23,7 +23,10 @@ contract LifeHack =
 
   
   entrypoint getHack(index : int) = 
-    state.hack[index]
+    switch(Map.lookup(index, state.hack))
+      None => abort("Product does not exist with this index")
+      Some(x) => x  
+    
     
     //create a life hack
     
@@ -34,7 +37,7 @@ contract LifeHack =
       name = name', 
       tutorial = tutorial',
       like = false,
-      likeCount = 0
+      likeCount = state.likeCount
       
       }
     let index = getHackLength() + 1
@@ -47,23 +50,21 @@ contract LifeHack =
     
   //returns number of likes
     
-  entrypoint likeCounts(index : int) = 
-    state.likeCount
+  entrypoint getlikeCount(index : int) = 
+    state.likeCount 
     
     //like a lifehack
     
   stateful entrypoint likeLifeHack(index : int) = 
     let product = getHack(index)
-    let hackUser = {
-      creatorAddress  = product.creatorAddress,
-      imageUrl = product.imageUrl,
-      name = product.name, 
-      tutorial = product.tutorial,
-      like = product.like,
-      likeCount = product.likeCount+1}
-    put(state{hack[index] = hackUser})  
+    let addlike = getlikeCount(index : int) + 1
+    //let hackUser = {
+      //creatorAddress  = product.creatorAddress,
+      //imageUrl = product.imageUrl,
+      //name = product.name, 
+      //tutorial = product.tutorial,
+      //like = product.like,
+      //likeCount = product.likeCount+1}
+    put(state{likeCount = addlike})  
     "LIfe Hack has BEEN LIKED SUCCESSFULLY"
   
-    
-  
-    

@@ -74,7 +74,7 @@ contract LifeHack =
     `; 
 
 
-const contractAddress = 'ct_2mbBfLwAAKprhRLeXKLdBcnWoMpms1NpTHNbym3kmFE9cKNt3X';
+const contractAddress = 'ct_VbEoGN6kdTV3QyMPuDfkPgn794Bbc69gjgzwM6b8952nQrTeF';
 var HackArray = [];
 var client = null;
 var hackLength = 0;
