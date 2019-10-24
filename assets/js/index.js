@@ -175,6 +175,7 @@ $('#regButton').click(async function(){
         
     })
     renderProduct();
+    location.reload(true);
     $("#loadings").hide();
     name.value =""
     url.value =  ""
