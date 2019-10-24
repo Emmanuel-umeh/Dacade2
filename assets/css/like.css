@@ -1,25 +1,46 @@
-
-.like-container{filter: url('#filter');}
-.like-cnt{  
-  position: absolute; 
-  cursor: pointer;
-  left: 50%; 
-  top: 50%; 
-  transform: translate(-50%, -50%);     background: rgba(255,255,255,0.3);     width: 60px; 
-  height: 60px;  
-  border-radius: 50%;
+.like-content {
+  display: inline-block;
+  width: 100%;
+  margin: 40px 0 0;
+  padding: 40px 0 0;
+  font-size: 18px;
+  border-top: 10px dashed #eee;
   text-align: center;
-  line-height: 75px;
-  z-index: 10;
 }
-.like-btn{
-  color: #fff;
+.like-content span {
+color: #9d9da4;
+font-family: monospace;
 }
-
-.gp-header{font-family: georgia; font-size: 40px; color: #ddca7e; font-style: italic; text-align: center; margin-top: 31px;}
-.gp-footer{position: fixed; color: #fff; bottom: 10px; left: 50%; font-family: georgia; font-style: italic; transform: translateX(-50%);}
-.gp-footer .soc_icons{display: inline-block; color: #ddca7e; margin: 0px 0px;}
-
-
-::-moz-selection { background: transparent;}
-::selection {background: transparent;}
+.like-content .btn-secondary {
+  display: block;
+  margin: 40px auto 0px;
+  text-align: center;
+  background: #ed2553;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px -8px rgb(240, 75, 113);
+  padding: 10px 17px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.like-content .btn-secondary:hover {
+  transform: translateY(-3px);
+}
+.like-content .btn-secondary .fa {
+  margin-right: 5px;
+}
+.animate-like {
+animation-name: likeAnimation;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+animation-duration: 0.65s;
+}
+@keyframes likeAnimation {
+0%   { transform: scale(30); }
+100% { transform: scale(1); }
+}
